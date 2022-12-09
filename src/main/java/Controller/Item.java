@@ -1,6 +1,5 @@
 package Controller;
 
-import Connect.ConnectDB;
 
 import java.sql.Connection;
 
