@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://oto.com.vn/member/Styles/web/postnew-quick.css?v=638035266443576953">
     <link rel="stylesheet" href="https://oto.com.vn/node_modules/@angular/material/prebuilt-themes/indigo-pink.css">
     <link rel="stylesheet" href="Login_Register.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 <body>
 <div class="container" style="margin-top: 50px">
@@ -137,7 +138,7 @@
 
 
                     <!-- Submit button -->
-                    <button type="submit" class="btn btn-primary btn-block mb-3">Register</button>
+                    <button type="submit" class="btn btn-primary btn-block mb-3 register">Register</button>
                     <div style="text-align: center">
                         <a class="back-home" href="/index.jsp">
                             <i class="fa-solid fa-backward"></i>
@@ -167,5 +168,23 @@
         console.log(123123)
         document.querySelector(".fileupload").click()
     })
+</script>
+<script>
+    document.querySelector(".register").addEventListener("click", (e)=>{
+        e.preventDefault()
+        $.ajax({
+            url: "/register",
+            type: "POST",
+            data: {
+                "name": "riven"
+            },
+            contentType: "application/x-www-form-urlencoded",
+            success: function (data) {
+                console.log(data);
+            }
+        });
+
+    })
+
 </script>
 </html>
